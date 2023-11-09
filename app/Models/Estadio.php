@@ -10,6 +10,8 @@ class Estadio extends Model
 {
     use HasFactory;
 
+    protected $fillable=['name','descripcion'];
+
     protected function name(): Attribute
     {
         return Attribute::make(

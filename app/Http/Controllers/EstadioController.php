@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEstadio;
 use Illuminate\Http\Request;
 use App\Models\Estadio;
 
@@ -15,6 +16,7 @@ class EstadioController extends Controller
     public function index()
     {
         $estadios = Estadio::orderBy('name')->get();
+
         return view('estadios.index', compact('estadios'));
     }
 
@@ -34,9 +36,19 @@ class EstadioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEstadio $request)
     {
-        //
+        
+       /*  $estadio = new Estadio();
+        $estadio->name = $request->name;
+        $estadio->descripcion = $request->descripcion;
+        $estadio->save(); */
+
+        $estadio = Estadio::create($request->all());
+        
+        return redirect()->route('estadios.show',compact('estadio'));
+
+        //return redirect()->route('estadios.show', $estadio);
     }
 
     /**
@@ -56,9 +68,9 @@ class EstadioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Estadio $estadio)
     {
-        //
+        return view('estadios.edit',compact('estadio'));
     }
 
     /**
@@ -68,9 +80,11 @@ class EstadioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreEstadio $request, Estadio $estadio)
     {
-        //
+        $estadio->update($request->all());
+        
+        return redirect()->route('estadios.show',compact('estadio'));
     }
 
     /**
@@ -79,8 +93,10 @@ class EstadioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Estadio $estadio)
     {
-        //
+        $estadio->delete();
+
+        return redirect()->route('estadios.index');
     }
 }

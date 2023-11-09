@@ -21,7 +21,7 @@ use App\Http\Controllers\JuegoController;
 |
 */
 
-Route::get('/', HomeController::class);
+Route::get('/', HomeController::class)->name('home');
 
 Route::controller(UserController::class)->group(function(){
     
@@ -40,8 +40,18 @@ Route::controller(UserController::class)->group(function(){
 Route::controller(EstadioController::class)->group(function(){
 
     Route::get('estadios', 'index')->name('estadios.index');
+
     Route::get('estadios/create', 'create')->name('estadios.create');
+
+    Route::post('estadios', 'store')->name('estadios.store');
+
     Route::get('estadios/{estadio}', 'show')->name('estadios.show');
+
+    Route::get('estadios/{estadio}/edit', 'edit')->name('estadios.edit');
+
+    Route::put('estadios/{estadio}', 'update')->name('estadios.update');
+
+    Route::delete('estadios/{estadio}', 'destroy')->name('estadios.destroy');
 });
 
 Route::controller(EquipoController::class)->group(function(){
