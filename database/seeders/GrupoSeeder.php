@@ -15,16 +15,12 @@ class GrupoSeeder extends Seeder
      */
     public function run()
     {
-        $grupo = new Grupo;
-        $grupo->name='A';
-        $grupo->save();
+        $grupos = ['A','B','C','D','E','F','G','H'];
 
-        $grupo2 = new Grupo;
-        $grupo2->name='B';
-        $grupo2->save();
-
-        $grupo3 = new Grupo;
-        $grupo3->name='C';
-        $grupo3->save();
+        for($g=0;$g<count($grupos);$g++) {
+            $grupo = new Grupo;
+            $grupo->name=$grupos[$g];
+            $grupo->save();
+        }
     }
 }

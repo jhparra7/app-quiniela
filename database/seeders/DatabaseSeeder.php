@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Estadio;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,8 +21,14 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
-        $this->call(EstadioSeeder::class);
+        /*
+         */
+        
+        $this->call(FaseSeeder::class);
+        $this->call(HorarioSeeder::class);
+        $this->call(EquipoSeeder::class);
         $this->call(GrupoSeeder::class);
+        Estadio::factory(8)->create();
+        
     }
 }

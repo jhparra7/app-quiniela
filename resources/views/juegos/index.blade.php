@@ -9,13 +9,54 @@
 @section('contenido')
 <div class="container">
     <h2>Horario de Juegos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Fecha</th>
+          <th scope="col">Hora</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">Equipo</th>
+          <th scope="col">Estadio</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01-01-2024</td>
+          <td>18:00</td>
+          <td>Venezuela</td>
+          <td>Colombia</td>
+          <td>Barquisimeto</td>
+        </tr>
+        <tr>
+          <td>02-01-2024</td>
+          <td>16:00</td>
+          <td>Brazil</td>
+          <td>Argentina</td>
+          <td>Barquisimeto</td>
+        </tr>
+        <tr>
+          <td>03-01-2024</td>
+          <td>18:00</td>
+          <td>Uruguay</td>
+          <td>Chile</td>
+          <td>Caracas</td>          
+        </tr>
+        <tr>
+          
+        </tr>
+        <tr>
+          
+        </tr>
+      </tbody>
+    </table>
+
     <ul class="responsive-table">
       <li class="table-header">
-        <div class="col col-3">Fecha</div>
-        <div class="col col-2">Hora</div>
-        <div class="col col-4">Equipo</div>
-        <div class="col col-4">Equipo</div>
-        <div class="col col-2">Estadio</div>
+        <div class="col col-3"></div>
+        <div class="col col-2"></div>
+        <div class="col col-4"></div>
+        <div class="col col-4"></div>
+        <div class="col col-2"></div>
       </li>
       @foreach ($juegos as $juego)    
       <li class="table-row">

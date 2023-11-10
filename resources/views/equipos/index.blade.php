@@ -7,7 +7,7 @@
     <br>
     <ul>
         @foreach ($equipos as $equipo)    
-            {{ $equipo->name }} - {{$equipo->id_grupo }} <br>
+        {{ $equipo->id }} - {{ $equipo->name }} - Grupo : {{$equipo->id_grupo }} <br>
         @endforeach
     </ul>
 @endsection

@@ -19,6 +19,7 @@ class EstadioFactory extends Factory
     {
         return [
             'name' => $this->faker->name(),
+            'descripcion' => $this->faker->text(700),
         ];
     }
 }

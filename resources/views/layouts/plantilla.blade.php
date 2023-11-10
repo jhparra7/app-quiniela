@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('titulo')</title>
-     @stack('styles_tabla')
     <!--favicon-->
     <!--estilos-->
+    <style>
+        .active {
+            color:blue;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <!--header-->
+    @include('layouts.partials.header')
     <!--nav-->
+    @include('layouts.partials.nav')
+    <!--contenido-->
     @yield('contenido')
     <!--footer-->
+    @include('layouts.partials.footer')
     <!--script-->
 </body>
 </html>

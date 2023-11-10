@@ -78,3 +78,6 @@ Route::controller(JuegoController::class)->group(function(){
 
     Route::get('juegos', 'index')->name('juegos.index');
 });
+
+// Se muestra informacion estatica
+Route::view('nosotros', 'nosotros')->name('nosotros');

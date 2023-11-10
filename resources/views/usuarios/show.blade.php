@@ -1,7 +1,7 @@
 @extends('layouts.plantilla')
 
-@section('titulo','Perfil')
+@section('titulo','Nosotros')
 
 @section('contenido')
-    <h1>Bienvenido a tu perfil de Usuario {{ $usuario }}</h1>
+    <h1>Nosotros</h1>
 @endsection
